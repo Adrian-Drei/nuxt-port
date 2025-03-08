@@ -311,7 +311,7 @@ onMounted(() => {
       <swiper-container
         class="mySwiper2 !h-24"
         :space-between="10"
-        :slides-per-view="2"
+        :slides-per-view="5"
         :free-mode="true"
         :watch-slides-progress="true"
         :breakpoints="{
