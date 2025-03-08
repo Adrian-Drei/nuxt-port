@@ -53,7 +53,11 @@ const handleMouseOver = (tech: object) => {
       :key="index"
       class="size-16 grayscale flex items-center justify-center hover:grayscale-0 duration-500"
     >
-      <img class="hover:-translate-y-2 duration-200 object-contain size-full" :src="tech.image" alt="" />
+      <img
+        class="hover:-translate-y-2 duration-200 object-contain size-full"
+        :src="tech.image"
+        alt=""
+      />
     </div>
   </NuxtMarquee>
 </template>

@@ -287,7 +287,8 @@ onMounted(() => {
           </a>
         </div>
       </Transition>
-      <swiper-container
+      <ClientOnly>
+        <swiper-container
         ref="containerRef"
         style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
         class="mySwiper h-64 mb-3"
@@ -302,16 +303,16 @@ onMounted(() => {
         coverflow-effect-depth="100"
         coverflow-effect-modifier="1"
         coverflow-effect-slide-shadows="true"
-      >
+        >
         <swiper-slide v-for="project in projectsContents">
           <img :src="project['imgUrl']" />
         </swiper-slide>
       </swiper-container>
 
       <swiper-container
-        class="mySwiper2 !h-24"
+      class="mySwiper2 !h-24"
         :space-between="10"
-        :slides-per-view="5"
+        :slides-per-view="2"
         :free-mode="true"
         :watch-slides-progress="true"
         :breakpoints="{
@@ -321,10 +322,11 @@ onMounted(() => {
           1280: { slidesPerView: 10, spaceBetween: 20 }, // Large screens
         }"
       >
-        <swiper-slide v-for="project in projectsContents">
-          <img :src="project['imgUrl']" />
-        </swiper-slide>
+      <swiper-slide v-for="project in projectsContents">
+        <img :src="project['imgUrl']" />
+      </swiper-slide>
       </swiper-container>
+    </ClientOnly>
     </div>
   </div>
 </template>
