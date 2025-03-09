@@ -122,10 +122,6 @@ input[type="number"] {
     --circle-size: 100%;
     --blending: hard-light;
 }
-.staticBackground {
-    background-image: url("../../public/images/static.webp");
-    opacity: 0.05;
-}
 .gradient-bg {
     width: 100vw;
     height: 100%;

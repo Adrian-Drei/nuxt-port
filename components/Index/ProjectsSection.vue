@@ -224,11 +224,15 @@ const projectsContents = [
 const projectsContent = computed(() => projectsContents[activeIndex.value]);
 
 onMounted(() => {
-  if (swiper.instance.value) {
-    swiper.instance.value.on("slideChange", () => {
-      activeIndex.value = swiper.instance.value?.activeIndex;
-    });
-  }
+  nextTick(() => {
+    if (swiper.instance.value) {
+      swiper.instance.value.on("slideChange", () => {
+        activeIndex.value = swiper.instance.value?.activeIndex;
+      });
+    } else {
+      console.warn("Swiper instance is not available yet.");
+    }
+  });
 });
 </script>
 
