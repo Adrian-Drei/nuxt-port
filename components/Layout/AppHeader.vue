@@ -75,7 +75,6 @@ const lightMode = () => {
 
 <template>
   <header class="flex justify-center">
-    Color mode: {{ $colorMode.value }}
     <div
       :class="direction === 'down' ? '-translate-y-44 opacity-0' : ''"
       class="bg-[#111111] mx-auto text-white flex items-center mt-5 py-5 px-8 rounded-full justify-between fixed z-50 border-2 border-transparent duration-1000 dark:border-[#292929] w-11/12 xs:px-16"

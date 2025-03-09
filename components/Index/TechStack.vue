@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const colorMode = useColorMode();
+
 const technology = ref("Technologies I Work With");
 const techDescription = ref(
   "A collection of tools and frameworks I use to build modern, high-performance websites and applications."
@@ -15,7 +17,11 @@ const handleMouseEnter = (tech: Tech) => {
 };
 </script>
 <template>
-  <section id="tech" class="pb-20">
+  <section
+    id="tech"
+    :class="colorMode.preference === 'dark' ? 'bg-black text-white' : ''"
+    class="pb-20"
+  >
     <div class="text-center mx-auto container py-12">
       <Transition name="fade" mode="out-in">
         <div v-if="technology" :key="technology">

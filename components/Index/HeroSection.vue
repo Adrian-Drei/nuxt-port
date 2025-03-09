@@ -1,4 +1,6 @@
-
+<script lang="ts" setup>
+const colorMode = useColorMode();
+</script>
 
 <template>
   <section
@@ -54,7 +56,8 @@
     </div>
 
     <svg
-      class="w-full !translate-y-[1px] absolute bottom-0 text-white duration-200 hidden md:block dark:text-black"
+      :class="colorMode.preference === 'dark' ? 'text-black' : 'text-white'"
+      class="w-full !translate-y-[1px] absolute bottom-0 duration-200 hidden md:block"
       viewBox="0 0 1922 174"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +71,8 @@
     </svg>
 
     <svg
-      class="w-full !translate-y-[1px] text-white duration-200 md:hidden dark:text-black"
+      :class="colorMode.preference === 'dark' ? 'text-black' : 'text-white'"
+      class="w-full !translate-y-[1px] duration-200 md:hidden"
       viewBox="0 0 430 162"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +86,5 @@
     </svg>
   </section>
 </template>
-
-<script lang="ts" setup></script>
 
 <style></style>

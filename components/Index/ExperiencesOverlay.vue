@@ -189,7 +189,7 @@ const workContent = [
 </script>
 
 <template>
-  <div>
+  <div class="z-30">
     <div
       class="z-30 flex mx-auto w-10/12 flex-col overflow-hidden rounded-2xl border-2 border-[#2b2b2b] bg-black duration-200 xs:max-w-screen-xs md:w-full md:max-w-screen-sm dark:bg-white dark:text-black"
     >

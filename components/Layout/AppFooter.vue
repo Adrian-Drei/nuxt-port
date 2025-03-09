@@ -1,7 +1,12 @@
+<script lang="ts" setup>
+const colorMode = useColorMode();
+</script>
+
 <template>
   <footer class="md:py-20 md:pt-0 pt-20 relative">
     <div
-      class="absolute size-full top-0 left-0 duration-200 dark:bg-black -z-30"
+      :class="colorMode.preference === 'dark' ? 'bg-black' : ''"
+      class="absolute size-full top-0 left-0 duration-200 -z-30"
     ></div>
 
     <div
@@ -163,7 +168,5 @@
     </div>
   </footer>
 </template>
-
-<script lang="ts" setup></script>
 
 <style></style>

@@ -29,6 +29,8 @@ export default {
                 midGray: "#313131",
                 blueishDark: "#282D3B",
                 slate: "#E8E8EB",
+                charcoal: "#141414",
+                dirtyWhite: "#F5F5F7",
             },
             container: {
                 screens: {

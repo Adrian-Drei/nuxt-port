@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const colorMode = useColorMode();
 const emits = defineEmits(["mouse-enter"]);
 
 const techStack = [
@@ -57,6 +58,7 @@ const handleMouseOver = (tech: object) => {
     :pauseOnHover="true"
     :style="{ '--tech-count': techStack.length }"
     :gradient="true"
+    :gradientColor="colorMode.preference === 'dark' ? 'black' : 'white'"
     class="my-5 h-20 overflow-x-hidden"
   >
     <div

@@ -2,6 +2,7 @@
 const containerRef = ref(null);
 const activeIndex = ref(0) as any;
 const swiper = useSwiper(containerRef);
+const colorMode = useColorMode();
 
 const projectsContents = [
   {
@@ -237,9 +238,22 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="projects" class="px-4 py-20">
+  <div
+    :class="
+      colorMode.preference === 'dark'
+        ? 'bg-black text-white'
+        : 'bg-white text-black'
+    "
+    id="projects"
+    class="px-4 py-20"
+  >
     <div
-      class="w-full relative max-w-6xl mx-auto rounded-[40px] border border-[#E8E8EB] bg-[#F5F5F7] px-4 py-10 duration-200 dark:bg-[#141414] dark:border-[#080808] dark:text-white md:px-24"
+      :class="
+        colorMode.preference === 'dark'
+          ? 'bg-charcoal border-[#080808]'
+          : 'bg-dirtyWhite border-[#E8E8EB]'
+      "
+      class="w-full relative max-w-6xl mx-auto rounded-[40px] border px-4 py-10 duration-200 md:px-24"
     >
       <Transition name="fade" mode="out-in">
         <div
@@ -293,44 +307,47 @@ onMounted(() => {
       </Transition>
       <ClientOnly>
         <swiper-container
-        ref="containerRef"
-        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-        class="mySwiper h-64 mb-3"
-        thumbs-swiper=".mySwiper2"
-        space-between="10"
-        effect="coverflow"
-        :grab-cursor="true"
-        :centered-slides="true"
-        slides-per-view="auto"
-        coverflow-effect-rotate="50"
-        coverflow-effect-stretch="0"
-        coverflow-effect-depth="100"
-        coverflow-effect-modifier="1"
-        coverflow-effect-slide-shadows="true"
+          ref="containerRef"
+          style="
+            --swiper-navigation-color: #fff;
+            --swiper-pagination-color: #fff;
+          "
+          class="mySwiper h-64 mb-3"
+          thumbs-swiper=".mySwiper2"
+          space-between="10"
+          effect="coverflow"
+          :grab-cursor="true"
+          :centered-slides="true"
+          slides-per-view="auto"
+          coverflow-effect-rotate="50"
+          coverflow-effect-stretch="0"
+          coverflow-effect-depth="100"
+          coverflow-effect-modifier="1"
+          coverflow-effect-slide-shadows="true"
         >
-        <swiper-slide v-for="project in projectsContents">
-          <img :src="project['imgUrl']" />
-        </swiper-slide>
-      </swiper-container>
+          <swiper-slide v-for="project in projectsContents">
+            <img :src="project['imgUrl']" />
+          </swiper-slide>
+        </swiper-container>
 
-      <swiper-container
-      class="mySwiper2 !h-24"
-        :space-between="10"
-        :slides-per-view="2"
-        :free-mode="true"
-        :watch-slides-progress="true"
-        :breakpoints="{
-          320: { slidesPerView: 4, spaceBetween: 5 },
-          570: { slidesPerView: 6, spaceBetween: 10 },
-          950: { slidesPerView: 8, spaceBetween: 15 },
-          1280: { slidesPerView: 10, spaceBetween: 20 }, // Large screens
-        }"
-      >
-      <swiper-slide v-for="project in projectsContents">
-        <img :src="project['imgUrl']" />
-      </swiper-slide>
-      </swiper-container>
-    </ClientOnly>
+        <swiper-container
+          class="mySwiper2 !h-24"
+          :space-between="10"
+          :slides-per-view="2"
+          :free-mode="true"
+          :watch-slides-progress="true"
+          :breakpoints="{
+            320: { slidesPerView: 4, spaceBetween: 5 },
+            570: { slidesPerView: 6, spaceBetween: 10 },
+            950: { slidesPerView: 8, spaceBetween: 15 },
+            1280: { slidesPerView: 10, spaceBetween: 20 }, // Large screens
+          }"
+        >
+          <swiper-slide v-for="project in projectsContents">
+            <img :src="project['imgUrl']" />
+          </swiper-slide>
+        </swiper-container>
+      </ClientOnly>
     </div>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useMouseInElement } from "@vueuse/core";
 import { useTemplateRef, defineProps } from "vue";
+const colorMode = useColorMode();
 
 const props = defineProps({
   cardType: {
@@ -75,8 +76,16 @@ const svgUrl = computed(() => {
 </script>
 <template>
   <div ref="target">
+    <!-- :class="isLogo ? 'bg-black' : 'bg-gray-200'" -->
     <div
-      :class="isLogo ? 'bg-black' : 'bg-gray-200'"
+      :class="{
+        'bg-gray-200': isLogo
+          ? colorMode.preference === 'dark'
+          : colorMode.preference === 'light',
+        'bg-charcoal': isLogo
+          ? colorMode.preference === 'light'
+          : colorMode.preference === 'dark',
+      }"
       ref="child"
       class="flex h-24 w-16 border-black border items-center justify-center rounded-xl md:h-36 md:w-24 dark:bg-[#141414] duration-200"
     >
