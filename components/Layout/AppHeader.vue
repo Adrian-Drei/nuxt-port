@@ -23,6 +23,44 @@ const toggleDrawer = () => {
   visibleRight.value = !visibleRight.value;
   console.log("Drawer visible:", visibleRight.value);
 };
+
+import { onMounted, onUnmounted, ref } from "vue";
+
+const interBubbles = ref<NodeListOf<Element> | null>(null);
+const curX = ref(0);
+const curY = ref(0);
+const tgX = ref(0);
+const tgY = ref(0);
+let animationFrameId: number;
+
+const move = () => {
+  curX.value += (tgX.value - curX.value) / 20;
+  curY.value += (tgY.value - curY.value) / 20;
+
+  interBubbles.value?.forEach((interBubble) => {
+    (interBubble as HTMLElement).style.transform = `translate(${Math.round(
+      curX.value
+    )}px, ${Math.round(curY.value)}px)`;
+  });
+
+  animationFrameId = requestAnimationFrame(move);
+};
+
+const handleMouseMove = (event: MouseEvent) => {
+  tgX.value = event.clientX;
+  tgY.value = event.clientY;
+};
+
+onMounted(() => {
+  interBubbles.value = document.querySelectorAll(".interactive");
+  window.addEventListener("mousemove", handleMouseMove);
+  move();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("mousemove", handleMouseMove);
+  cancelAnimationFrame(animationFrameId);
+});
 </script>
 
 <template>
