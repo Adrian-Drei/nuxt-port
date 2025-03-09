@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxt/image',
     'nuxt-marquee',
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    '@nuxtjs/color-mode'
   ]
 })

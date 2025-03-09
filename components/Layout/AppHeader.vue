@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from "@vueuse/core";
 import Drawer from "primevue/drawer";
+const colorMode = useColorMode();
 
 const { directions } = useWindowScroll();
 const direction = ref<string | null>(null);
@@ -61,10 +62,20 @@ onUnmounted(() => {
   window.removeEventListener("mousemove", handleMouseMove);
   cancelAnimationFrame(animationFrameId);
 });
+
+// Dark Mode
+const darkMode = () => {
+  colorMode.preference = "dark";
+};
+
+const lightMode = () => {
+  colorMode.preference = "hello";
+};
 </script>
 
 <template>
   <header class="flex justify-center">
+    Color mode: {{ $colorMode.value }}
     <div
       :class="direction === 'down' ? '-translate-y-44 opacity-0' : ''"
       class="bg-[#111111] mx-auto text-white flex items-center mt-5 py-5 px-8 rounded-full justify-between fixed z-50 border-2 border-transparent duration-1000 dark:border-[#292929] w-11/12 xs:px-16"
@@ -118,14 +129,17 @@ onUnmounted(() => {
           </li>
         </ul>
         <a
-          href="/Merano_CV.pdf" download=""
+          href="/Merano_CV.pdf"
+          download=""
           class="rounded-full py-4 w-full duration-200 justify-center items-center font-bold text-xl transition-all bg-pos-10 hidden text-center max-w-32 gradientButton lg:flex xl:max-w-44"
           >Resume</a
         >
         <div class="flex flex-col size-7 overflow-hidden">
+          <!-- Night mode Icon -->
           <svg
-            onclick="nightMode()"
-            class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 nightModeButton dark:-translate-y-7 hover:text-primary"
+            @click="colorMode.preference = 'dark'"
+            :class="colorMode.value === 'dark' ? '-translate-y-7' : ''"
+            class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 nightModeButton hover:text-primary"
             viewBox="0 0 28 29"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -148,8 +162,9 @@ onUnmounted(() => {
             </defs>
           </svg>
           <svg
-            onclick="lightMode()"
-            class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 lightModeButton dark:-translate-y-7 hover:text-primary"
+            @click="colorMode.preference = 'light'"
+            :class="colorMode.value === 'dark' ? '-translate-y-7' : ''"
+            class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 hover:text-primary"
             viewBox="0 0 25 25"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
