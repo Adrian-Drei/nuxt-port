@@ -163,7 +163,7 @@ const lightMode = () => {
           </svg>
           <svg
             @click="colorMode.preference = 'light'"
-            :class="colorMode.value === 'light' ? '' : '-translate-y-7'"
+            :class="colorMode.value === 'dark' ? '-translate-y-7' : ''"
             class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 hover:text-primary"
             viewBox="0 0 25 25"
             fill="none"
