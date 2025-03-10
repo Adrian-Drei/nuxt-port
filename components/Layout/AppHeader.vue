@@ -101,7 +101,8 @@ const lightMode = () => {
           <hr class="h-px border-none bg-gray-400 my-2 w-full" />
           <li class="mt-4">
             <a
-              href="{{ url('/signup') }}"
+              href="/Merano_CV.pdf"
+              download=""
               class="bg-gradient-to-r mx-auto text-white px-5 mt-3 from-primaryDark to-primary rounded-full py-1 w-full duration-200 justify-center items-center text-xl transition-all bg-pos-10 text-center max-w-32 xl:max-w-44 hover:bg-pos-100 font-medium"
               >Resume</a
             >
@@ -162,7 +163,7 @@ const lightMode = () => {
           </svg>
           <svg
             @click="colorMode.preference = 'light'"
-            :class="colorMode.value === 'dark' ? '-translate-y-7' : ''"
+            :class="colorMode.value === 'light' ? '' : '-translate-y-7'"
             class="size-7 text-white duration-500 cursor-pointer flex-shrink-0 hover:text-primary"
             viewBox="0 0 25 25"
             fill="none"

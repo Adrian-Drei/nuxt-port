@@ -57,7 +57,7 @@ const colorMode = useColorMode();
 
     <svg
       :class="colorMode.preference === 'dark' ? 'text-black' : 'text-white'"
-      class="w-full !translate-y-[1px] absolute bottom-0 duration-200 hidden md:block"
+      class="w-full duration-200 !translate-y-[1px] absolute bottom-0 duration-200 hidden md:block"
       viewBox="0 0 1922 174"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
