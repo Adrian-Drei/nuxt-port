@@ -30,6 +30,54 @@ const projectsContents = [
     imgUrl: "/images/projects/32.png",
   },
   {
+    title: "USA Cellucor Supplements Maxx",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://usacellucorsupplementsmaxx.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/31.png",
+  },
+  {
+    title: "Pure Essence Nutrition",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://www.pureessencenutrition.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/30.png",
+  },
+  {
+    title: "Mens Virility Performance Blends Igniter",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://mensvirilityperformanceblendsigniter.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/29.png",
+  },
+  {
+    title: "Natural Maxx Enhancer",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://naturalmaxxenhancer.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/28.png",
+  },
+  {
+    title: "Alpha Male Fitness Drive",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://alphamalefitnessdrive.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/27.png",
+  },
+  {
+    title: "Usa Men's Lifestyle Power",
+    tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
+    link: "https://usamenslifestylepower.com/",
+    description:
+      "An online pharmacy where users can browse and purchase male enhancement drugs with ease, ensuring a discreet and convenient shopping experience.",
+    imgUrl: "/images/projects/26.png",
+  },
+  {
     title: "SizeBiotic",
     tech: "Tailwind, Alpine, Laravel, Livewire, Tailwind CSS",
     link: "https://staging.sizebiotic.com/enhancements/sizebiotic/",
@@ -297,9 +345,9 @@ onMounted(() => {
                 </g>
               </svg>
               <p
-                class="group-hover:max-w-52 group-hover:ml-2 overflow-hidden max-w-0 duration-200 whitespace-nowrap"
+                class="group-hover:max-w-32 group-hover:ml-2 overflow-hidden max-w-0 duration-200 whitespace-nowrap"
               >
-                Try {{ projectsContent["title"] }}
+                Go to project
               </p>
             </button>
           </a>
