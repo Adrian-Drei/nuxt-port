@@ -172,7 +172,6 @@ onUnmounted(() => {
             />
           </svg>
         </div>
-        {{ colorMode.preference }}
         <!-- Burger Icon -->
         <button class="lg:hidden" @click="toggleDrawer">
           <svg
