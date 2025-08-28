@@ -75,7 +75,7 @@ const workContent = [
     title: "Web Developer",
     company: "Stealth Solutions & Digital Marketing",
     address: "Kingston Tower, Ayala-Alabang, Muntinlupa City",
-    date: "March 2024 to Present",
+    date: "March 2024 to July 2025",
     highlights: [
       "Developed over 100 mid sites using TALL stack.",
       "Built and launched two pharma e-commerce sites with prescription logic based on survey responses using Nuxt and Vue for frontend side.",
