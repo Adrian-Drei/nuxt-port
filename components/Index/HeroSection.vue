@@ -22,7 +22,7 @@ const colorMode = useColorMode();
     </h1>
     <div class="relative mb-44">
       <p class="text-lg px-4 md:text-xl font-medium max-w-4xl">
-        A passionate Front-End Developer crafting sleek, responsive, and
+        A passionate Full-Stack Developer crafting sleek, responsive, and
         user-friendly web experiences. I specialize in Vue.js, Nuxt, Tailwind
         CSS, JavaScript, and the TALL stack (Tailwind, Alpine.js, Laravel,
         Livewire) to build dynamic and scalable applications. Let’s create

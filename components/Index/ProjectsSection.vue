@@ -354,6 +354,51 @@ onMounted(() => {
         </div>
       </Transition>
       <ClientOnly>
+        <!-- Prev -->
+        <button
+          :class="
+            activeIndex === 0
+              ? 'opacity-50 cursor-not-allowed'
+              : 'cursor-pointer'
+          "
+          class="swiper-button-prev-custom text-white"
+        >
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 17.898C15 18.972 13.7351 19.546 12.9268 18.8388L6.61617 13.3169C5.81935 12.6197 5.81935 11.3801 6.61617 10.6829L12.9268 5.16108C13.7351 4.45388 15 5.02785 15 6.1018L15 17.898Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+
+        <!-- Next -->
+        <button
+          :class="
+            activeIndex === projectsContents.length - 1
+              ? 'opacity-50 cursor-not-allowed'
+              : ' cursor-pointer'
+          "
+          class="swiper-button-next-custom text-white"
+        >
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 17.898C9 18.972 10.2649 19.546 11.0731 18.8388L17.3838 13.3169C18.1806 12.6197 18.1806 11.3801 17.3838 10.6829L11.0731 5.16108C10.2649 4.45388 9 5.02785 9 6.1018V17.898Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
         <swiper-container
           ref="containerRef"
           style="
@@ -372,6 +417,8 @@ onMounted(() => {
           coverflow-effect-depth="100"
           coverflow-effect-modifier="1"
           coverflow-effect-slide-shadows="true"
+          navigation-prev-el=".swiper-button-prev-custom"
+          navigation-next-el=".swiper-button-next-custom"
         >
           <swiper-slide v-for="project in projectsContents">
             <img :src="project['imgUrl']" />
@@ -469,5 +516,35 @@ swiper-slide {
 .fade-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: background 0.2s;
+}
+
+.swiper-button-prev-custom {
+  left: 10px;
+}
+
+.swiper-button-next-custom {
+  right: 10px;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 </style>

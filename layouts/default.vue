@@ -1,13 +1,9 @@
 <template>
-  <div>
+  <div class="font-poppins">
     <slot />
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

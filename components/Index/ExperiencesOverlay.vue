@@ -72,6 +72,21 @@ const selectedWork = ref(0);
 
 const workContent = [
   {
+    title: "Freelance Web Developer",
+    company: "Live Life Stronger",
+    address: "New York",
+    date: "July 2025 to Current",
+    highlights: [
+      "Developed and maintained high-converting landing pages and web applications using Vue, Yii, and the TALL stack.",
+      "Built dynamic, responsive UI components using Vue and Tailwind CSS for improved performance and user experience.",
+      "Implemented scalable backend features using Laravel and Yii, focusing on clean architecture and maintainability.",
+      "Optimized page speed, responsiveness, and SEO to improve traffic acquisition and conversion rates.",
+      "Collaborated closely with designers and marketing teams to rapidly ship features and iterate on product improvements.",
+      "Refactored legacy codebases to improve performance, readability, and long-term scalability.",
+      "Built and managed blog websites using WordPress, focusing on performance, SEO, and content structure.",
+    ],
+  },
+  {
     title: "Web Developer",
     company: "Stealth Solutions & Digital Marketing",
     address: "Kingston Tower, Ayala-Alabang, Muntinlupa City",
@@ -241,8 +256,8 @@ const workContent = [
             props.selected === 'about'
               ? 'fade'
               : props.selected === 'education'
-              ? 'slideLeft'
-              : 'slideRight'
+                ? 'slideLeft'
+                : 'slideRight'
           "
         >
           <div :key="props.selected">
@@ -315,20 +330,18 @@ const workContent = [
               x-transition:enter.duration.500ms
               class="bg-slate p-5 lg:min-h-[620px]"
             >
-              <h2 class="mb-2 text-2xl font-bold">FRONTEND DEVELOPER</h2>
+              <h2 class="mb-2 text-2xl font-bold">FULLSTACK DEVELOPER</h2>
               <p>
-                I have been working as a web developer since 2023, where I have
-                gained proficiency in various frameworks and technologies
-                including React. As a Construction Engineer with a strong
-                interest in technology and software development, my experience
-                includes overseeing the design and construction of various
-                infrastructure projects. My technical skills encompass CSS, C,
-                JavaScript, Python, SQL, Django, Bootstrap, HTML, React, and
-                Flask. I find satisfaction in tackling the complexities of
-                creating scalable and efficient software solutions. While
-                leveraging my expertise in construction engineering, I am now
-                actively pursuing a career transition to further enhance my
-                skills and excel in the field of software development.
+                I’m a web developer who enjoys turning ideas into fast, clean,
+                and functional digital experiences. I mainly work with React,
+                Yii, and the TALL stack (Tailwind CSS, Alpine.js, Laravel, and
+                Livewire), alongside CSS, HTML, JavaScript, Python, SQL, Django,
+                and Flask.
+                <br />
+                <br />
+                I love building intuitive interfaces, writing efficient code,
+                and constantly improving my skills to create better, more
+                impactful applications.
               </p>
             </div>
 
@@ -346,9 +359,9 @@ const workContent = [
                   >
                     <div class="mb-5">
                       <p>
-                        <strong>{{
-                          workContent[selectedWork]["company"]
-                        }}</strong>
+                        <strong>
+                          {{ workContent[selectedWork]["company"] }}
+                        </strong>
                         <span v-if="workContent[selectedWork]['address']">
                           - {{ workContent[selectedWork]["address"] }}
                         </span>
@@ -399,7 +412,9 @@ const workContent = [
 /* Fade Animation */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
@@ -409,7 +424,9 @@ const workContent = [
 /* Slide Left Animation */
 .slideLeft-enter-active,
 .slideLeft-leave-active {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 .slideLeft-enter-from {
   transform: translateX(100%);
@@ -421,7 +438,9 @@ const workContent = [
 /* Slide Right Animation */
 .slideRight-enter-active,
 .slideRight-leave-active {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 .slideRight-enter-from {
   transform: translateX(-100%);
